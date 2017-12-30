@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>About Us</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+<!-- styles -->
+<link rel="stylesheet" href="assets/css/fancybox/jquery.fancybox.css">
+<link href="assets/css/bootstrap.css" rel="stylesheet" />
+<link href="assets/css/bootstrap-theme.css" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/slippry.css">
+<link href="assets/css/style.css" rel="stylesheet" />
+<link rel="stylesheet" href="assets/color/default.css">
+
+
+<script src="assets/js/modernizr.custom.js"></script>
+</head>
+<body >
+<header>
+
+<div id="navigation" class="navbar navbar-inverse navbar-fixed-top default" role="navigation">
+  <div class="container">
+  
+    
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <img style="border-radius: 50%; width:40px; height:40px; float:left;margin-left:-4em;margin-top: 0.6em" src="logo.jpg"/>
+          <a class="navbar-brand" href="index.html">SSS</a>
+        </div>
+
+	<div class="navigation">
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"><nav>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="current"><a href="index.html">Home</a></li>
+		<li><a href="about.html">About</a></li>
+		<li><a href="current.html">Current Projects</a></li>
+		<li><a href="past.html">Past Projects</a></li>
+		<li><a href="contact.html">Contact</a></li>
+      </ul></nav>
+    </div><!-- /.navbar-collapse -->
+	</div>
+
+  </div>
+</div>
+
+</header>
+<section id="about" class="section">
+<div  class="container">
+
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			<div class="heading">
+				<h3><span>Past Projects</span></h3>
+			</div>
+			<div class="sub-heading">
+			<br>
+		
+			<br> 
+
+			<h2> 2016 </h2> <br>
+			<p style="font-size:1.3em">
+					 In 2016, after being dissatisfied with the number of space-orientated competitions, SSS created the CubeSat Systems Competition. The CSC was meant task competitors to design, build, and test various parts of a CubeSat. The first iteration of the competition tasked two teams within the club to develop an attitude determination and control system for a satellite test bed that was developed by the Human/Robotics/Vehicle Integration and Performance (HRVIP) Lab at UC Davis. Both teams performed well, but the team lead by current Vice-President Jacob Needels won due to their use of well understood and replicable technology. Unfortunately, we could not find enough interest in the competition to expand it to other universities, so we decided to go in a new direction with the QuARCS project.  <br>
+					  </p>
+
+					<br>
+					<br>
+					<h2> 2015 </h2> <br>
+<p style="font-size:1.3em">
+					 In 2015, the Space and Satellite Systems Club entered into the CanSat Competition hosted by the American Astronautical Society (AAS) where we were tasked with designing and building a glider to record atmospheric and flight data after being launched a few thousand feet into the air. The team won third place in design. However, during our launch, the rocket provided by the competition malfunctioned, exploded, and nearly destroyed our glider.   <br>
+					  </p>
+				</p>
+				<br>
+				<br>
+				<p style="font-size:1.1em;font-weight: 20%">
+					 For general queries, please email us at spacesystemsclub@gmail.com. <br>
+For information on how to sponsor us, please contact Anna Rita Moukarzel at amoukarzel@ucdavis.edu.  <br>
+					  </p>
+					 
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 style="text-align: center">  </h2>
+
+
+
+
+	<div class="row">
+		
+		
+		
+				
+			
+
+		</div>
+	</div>
+</div>
+</section>
+
+
+
+<script>
+    function smoothScroll(target, time) {
+	var margin = ($('#main-header').outerHeight() - 1);
+	if (!time) { time = '1000'; }
+
+	if (target === 'toTop') {
+		$('html,body').animate({
+			scrollTop: 0
+		}, time);
+	}
+	else {
+		$('html,body').animate({
+			scrollTop: target.offset().top - margin
+		}, time);
+	}
+}
+
+// SCROLL DOWN ARROR BUTTON
+
+	var count = 0;
+
+	$('#scroll').on("click", function(){
+
+		var sections = $('section');
+
+    //+55px to offset the margin-top
+		var $this = $(this),
+			top = ($this.offset().top - $(window).scrollTop()) + 55,
+			right = $this.offset().right;
+
+
+		$this.css({
+			position: 'fixed',
+			top: top,
+			right: right
+		})
+		.animate({
+			right: '5%',
+			top: '90%'
+		}, 600)
+		.addClass('clicked');
+
+		var target;
+
+		// END OF ARRAY HAS ALEADY BEEN REACHED
+		if (count > (sections.length -1) ) { 
+			count = -1;
+			
+			smoothScroll('toTop');
+			$this.removeClass('rotate');
+		}
+		// JUST REACHED END OF ARRAY
+		else { 
+			target = $(sections[count]);
+			if (count === (sections.length -1)) {
+				$this.addClass('rotate');
+			}
+			smoothScroll(target);
+		}
+	
+		count++;
+
+		$(this).find('.arrow-bounce').removeClass('arrow-bounce');
+
+	});
+</script>
+
+<!-- end section about -->
+<!-- section works -->
+
+<!-- end section contact -->
+<footer>
+<div class="verybottom">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="aligncenter">
+                <ul class="social-network social-circle">
+                    <li><a href="#" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li>
+                    <li><a href="https://fb.me/SpaceAndSatelliteSystems" target="_blank" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
+                    <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                </ul>	
+				</div>				
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="aligncenter">
+					<p>
+						 &copy; SSS - All rights reserved 
+					</p>
+                   
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</footer>
+<a href="#" class="scrollup"><i class="fa fa-angle-up fa-2x"></i></a>
+<!-- javascript -->
+<script src="assets/js/jquery-1.9.1.min.js"></script>
+<script src="assets/js/jquery.easing.js"></script>
+<script src="assets/js/classie.js"></script>
+<script src="assets/js/bootstrap.js"></script>
+<script src="assets/js/slippry.min.js"></script>
+<script src="assets/js/nagging-menu.js"></script>
+<script src="assets/js/jquery.nav.js"></script>
+<script src="assets/js/jquery.scrollTo.js"></script>
+<script src="assets/js/jquery.fancybox.pack.js"></script> 
+<script src="assets/js/jquery.fancybox-media.js"></script> 
+<script src="assets/js/masonry.pkgd.min.js"></script>
+<script src="assets/js/imagesloaded.js"></script>
+<script src="assets/js/jquery.nicescroll.min.js"></script>
+<script src="https://maps.google.com/maps/api/js?sensor=true"></script>
+<script src="assets/js/AnimOnScroll.js"></script>
+    <script>
+        new AnimOnScroll( document.getElementById( 'grid' ), {
+            minDuration : 0.4,
+            maxDuration : 0.7,
+            viewportFactor : 0.2
+        } );
+    </script>
+<script>
+	$(document).ready(function(){
+	  $('#slippry-slider').slippry(
+		defaults = {
+			transition: 'vertical',
+			useCSS: true,
+			speed: 5000,
+			pause: 3000,
+			initSingle: false,
+			auto: true,
+			preload: 'visible',
+			pager: false,		
+		} 
+	  
+	  )
+	});
+</script>
+
+<script src="assets/js/custom.js"></script>
+<script src="contactform/contactform.js"></script>
+
+</body>
+</html>
